@@ -1,6 +1,6 @@
 import { Curso } from './model/curso/curso';
 import { CursoService } from './service/curso/curso.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   message: string = "Projeto angular";
   cursos: Curso[] = [];
 
@@ -20,7 +20,11 @@ export class AppComponent {
     private cursoService: CursoService
   ) { }
 
-  submit() { 
+  ngOnInit() {
+    this.listar();
+  }
+
+  submit() {
     const curso: Curso = { ...this.form.value }
     this.cursoService.salvar(curso).subscribe(
       resp => {
@@ -28,4 +32,19 @@ export class AppComponent {
         this.form.reset()
       })
   }
+
+  listar() {
+    this.cursoService.listar()
+      .subscribe(
+        resp => {
+          this.cursos = resp;
+          console.log(resp)
+        }
+      )
+  }
+
+
+
 }
+
+

@@ -14,7 +14,11 @@ export class CursoService {
     private http: HttpClient
   ) { }
 
-  salvar(curso: Curso): Observable<Curso>{
+  salvar(curso: Curso): Observable<Curso> {
     return this.http.post<Curso>(this.apiUrl, curso);
+  }
+
+  listar(): Observable<Curso[]> {
+    return this.http.get<Curso[]>(`${this.apiUrl}/listar`);
   }
 }
