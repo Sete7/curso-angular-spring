@@ -1,13 +1,13 @@
-package com.app.todo.repository;
+package com.app.curso.repository;
 
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.app.todo.entities.Todo;
+import com.app.curso.entities.Curso;
 
 @Repository
-public interface TodoRepository extends JpaRepository<Todo, Long> {
+public interface CursoRepository extends JpaRepository<Curso, Long> {
 
 }

@@ -1,22 +1,22 @@
-package com.app.todo.dto;
+package com.app.curso.dto;
 
-import com.app.todo.entities.Todo;
+import com.app.curso.entities.Curso;
 
-public class TodoDTO {
+public class CursoDTO {
 
 	private String description;
 	private Boolean done;
 
-	public TodoDTO() {
+	public CursoDTO() {
 
 	}
 
-	public Todo convertDTO() {
-		return new Todo(description, done);
+	public Curso convertDTO() {
+		return new Curso(description, done);
 
 	}
 
-	public TodoDTO(String description, Boolean done) {
+	public CursoDTO(String description, Boolean done) {
 		this.description = description;
 		this.done = done;
 	}

@@ -1,4 +1,4 @@
-package com.app.todo.entities;
+package com.app.curso.entities;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -20,7 +20,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Todo implements Serializable {
+public class Curso implements Serializable {
 
 	private static final long serialVersionUID = 6677767224005526316L;
 
@@ -47,7 +47,7 @@ public class Todo implements Serializable {
 		setCreatedDate(LocalDateTime.now());
 	}
 	
-	public Todo(String description, Boolean done) {
+	public Curso(String description, Boolean done) {
 		this.description = description;
 		this.done = done;
 	}
