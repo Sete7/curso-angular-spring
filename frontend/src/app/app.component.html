@@ -1,4 +1,24 @@
-<div class="container">
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">App</a>
+  </div>
+</nav>
+
+<div class="container mt-5 mb-5">
   <h1>{{ message }}</h1>
-  <button type="button" class="btn btn-success">Bootstrap instalado com sucesso</button>
+</div>
+<hr class="mb-2" />
+<div class="container mt-5">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="col-md-6">
+        <input type="text" class="form-control" id="adicionar" placeholder="Adicionar curso"
+        formControlName="description"
+        >
+      </div>
+      <div class="col-md-3">
+        <button type="submit" class="btn btn-success">Adicionar curso</button>
+      </div>
+    </div>
+  </form>
 </div>
