@@ -43,6 +43,11 @@ export class AppComponent implements OnInit {
       )
   }
 
+  deletar(curso: Curso){
+    this.cursoService.deletar(curso.id)
+    .subscribe({next: (resp) => this.listar()})
+  }
+
 
 
 }

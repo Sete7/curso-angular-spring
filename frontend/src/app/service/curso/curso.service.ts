@@ -21,4 +21,8 @@ export class CursoService {
   listar(): Observable<Curso[]> {
     return this.http.get<Curso[]>(`${this.apiUrl}/listar`);
   }
+
+  deletar(id: number):Observable<void>{
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
 }
